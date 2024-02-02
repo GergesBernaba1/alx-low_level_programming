@@ -1,4 +1,13 @@
 CC = gcc
-SRC = main.c holberton.c
-all: $(SRC)
-	$(CC) $(SRC) -o holberton
+SRC = main.c school.c
+EXEC = school
+
+all: $(EXEC)
+
+$(EXEC): $(SRC)
+    $(CC) $(SRC) -o $(EXEC)
+
+.PHONY: clean
+clean:
+    rm -f $(EXEC)
+
